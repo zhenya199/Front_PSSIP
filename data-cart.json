@@ -1,0 +1,38 @@
+[
+    {
+      "title": "Отбеливание зубов",
+      "img": "http://127.0.0.1:5500/stomatolog1.jpg",
+      "price": "120$"
+    },
+    {
+      "title": "Реставрация зубов",
+      "img": "https://avatars.mds.yandex.net/i?id=ec2f19cf4cfc9982fa404df4001dbd111dd03fa9-5584147-images-thumbs&n=13",
+      "price": "200$"
+    },
+    {
+      "title": "Имплантация зубов",
+      "img": "https://th.bing.com/th/id/OIP.PPV3M1XS_TN8zOw900UnLgHaHa?rs=1&pid=ImgDetMain",
+      "price": "80$"
+    },
+    {
+      "title": "Лечение десен",
+      "img": "https://th.bing.com/th/id/OIP.6LJgB7QpZbw3E7LY7C4sTQHaEa?rs=1&pid=ImgDetMain",
+      "price": "150$"
+    },
+    {
+      "title": "Дизайн улыбки",
+      "img": "https://th.bing.com/th/id/OIP.MrsNA09eEN9wHSkIG4Vf7QAAAA?rs=1&pid=ImgDetMain",
+      "price": "160$"
+    },
+    {
+      "title": "Сознательная седация",
+      "img": "https://th.bing.com/th/id/OIP.BQvyvJ1pZmw_o-gvRmeV_QHaFh?rs=1&pid=ImgDetMain",
+      "price": "200$"
+    },
+    {
+      "title": "Апноэ во сне",
+      "img": "https://th.bing.com/th/id/OIP.mQ-4GyH_U3ycwYnZW9o0tAHaE7?rs=1&pid=ImgDetMain",
+      "price": "150$"
+    }
+  ]
+  

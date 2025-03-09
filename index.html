@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stomatology</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index1.js"/>
+    <style>
+
+      #banner {
+        display: none;
+        position: fixed;
+        height: 200px;
+        width: 200px;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color:#007bff;
+        color: #ffffff;
+        padding: 20px;
+        border: 1px solid #f5c6cb;
+        border-radius: 5px;
+        z-index: 9000;
+        font-size: 30px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+          swiper-container {
+      width: 100%;
+      height: 60%;
+    }
+
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    </style>
+     <style>
+      /* Стили для сердечек */
+      .heart {
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          background-color: red;
+          clip-path: polygon(50% 15%, 61% 0, 83% 0, 100% 25%, 100% 50%, 50% 100%, 0 50%, 0 25%, 17% 0);
+          animation: heartAnimation 1s infinite;
+      }
+
+      /* Анимация для сердечек */
+      @keyframes heartAnimation {
+          0% {
+              transform: scale(1);
+          }
+          50% {
+              transform: scale(1.3);
+          }
+          100% {
+              transform: scale(1);
+          }
+      }
+  </style>
+  <style>
+    /* Стили для модального окна */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        padding-top: 50px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    /* Стили для изображения в модальном окне */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 600px;
+        margin-top: 50px;
+    }
+
+    /* Стили для кнопки закрытия */
+    .close {
+        position: absolute;
+        top: 13px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        margin-top: 50px;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+<style>
+  #scrollToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99999999;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 50%;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const phoneNumber = document.querySelector('.phone-number');
+      phoneNumber.addEventListener('click', function() {
+          const userResponse = confirm('Хотите позвонить по этому номеру?');
+          if (userResponse) {
+              alert('Отлично, ждем звонка!');
+          } else {
+              // Закрыть форму или выполнить другие действия
+              // Например:
+              // phoneNumber.style.display = 'none';
+          }
+      });
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const servicesButton = document.querySelector('.services');
+      const rectangle52 = document.querySelector('.rectangle-52');
+
+      servicesButton.addEventListener('click', function() {
+          rectangle52.scrollIntoView({ behavior: 'smooth' });
+      });
+  });
+</script>
+<style>
+  .modal-2 {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      text-align: center;
+      padding-top: 20%;
+  }
+  
+  .modal-content-2 {
+      background-color: #333;
+      padding: 20px;
+      border-radius: 5px;
+      display: inline-block;
+  }
+</style>
+  </head>
+  <body>
+    
+    <div class="main-container">
+      <div class="rectangle">
+        <div class="location-unfill">
+          <div class="group"><div class="group-1"></div></div>
+        </div>
+        <div class="frame">
+          <div class="group-2">
+            <span class="phone-number">+7 (777) 654 44 54</span>
+            <div class="phone-unfill">
+              <div class="group-3">
+                <div class="group-4"><div class="vector"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="group-5">
+            <div class="group-6">
+              <span class="email">info@dentaltooth.kz</span>
+            </div>
+            <div class="envelope-unfill">
+              <div class="group-7"><div class="vector-8"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-9">
+          <div class="twitter-unfill-regular">
+            <div class="group-a">
+              <div class="group-b">
+                <div class="group-c"><div class="vector-d"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="instagram-unfill">
+            <!-- <a href="https://www.instagram.com/_w0rf1/?hl=ru" target="_blank"> -->
+                <div class="group-e"></div>
+            </a>
+        </div>
+          <div class="vk-unfill">
+            <div class="group-f"><div class="vector-10"></div></div>
+          </div>
+        </div>
+        <span  class="address"><a href="https://yandex.by/maps/geo/53168302/?ll=76.946600%2C43.235490&source=serp_navig&z=17">ул. Протопского 28А город Алматы</a></span>
+      </div>
+      <div class="flex-row-a">
+        <div class="rectangle-11">
+          <span class="consultation">Получить консультацию</span>
+        </div>
+        <div class="logo"></div>
+        <span class="dental-tooth">Dental Tooth</span>
+        <div class="frame-12">
+          <span class="main-13">Главная</span
+          ><span class="services">Услуги</span
+          ><span class="our-specialists">Наши специалисты</span
+          ><span class="reviews">Отзывы</span><span class="blog">Блог</span
+          ><span class="contacts">Контакты</span>
+        </div>
+        <span class="clinic">Клиника</span>
+        <div class="rectangle-14"></div>
+      </div>
+      <div class="rectangle-15">
+        <div class="flex-column-b">
+          <div class="logo-16"><div class="circle"></div></div>
+          <div class="logo-17"></div>
+        </div>
+        <div class="flex-column-bae">
+          <span class="clinic-name">Стоматологическая клиника Dental Tooth</span
+          ><span class="treatment">Безболезненное <br>лечение зубов</span
+          ><span class="talented-team"
+            >Талантливая команда стоматологов, признанных за высокое качество
+            стоматологических процедур.</span
+          >
+          <div class="overlay" id="overlay"></div>
+          <div class="rectangle-18" id= "rectangle">
+              <span class="appointment">Записаться на прием</span>
+          </div>
+          <div class="form-popup" id="formPopup">
+              <form class="form-container">
+                  <h2>Введите имя и номер телефона</h2>
+                  <input type="text" placeholder="Имя" required>
+                  <input type="tel" placeholder="Номер телефона" required>
+                  <button type="submit" class="btn">Отправить</button>
+              </form>
+          </div>
+          <script src="index1.js"></script>
+        </div>
+        <div class="rectangle-19"></div>
+      </div>
+      <div class="flex-row-f">
+        <div class="mask-group" onclick="openModal('stom.png')">
+          <!-- Ваше изображение или содержимое -->
+      </div>
+      
+      <div id="myModal" class="modal">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <img class="modal-content" id="img01">
+      </div>
+  
+      <script>
+          function openModal(imgSrc) {
+              const modal = document.getElementById('myModal');
+              const modalImg = document.getElementById('img01');
+              modal.style.display = 'block';
+              modalImg.src = imgSrc;
+          }
+  
+          function closeModal() {
+              const modal = document.getElementById('myModal');
+              modal.style.display = 'none';
+          }
+      </script>
+      
+        <div class="clinic-name-1a">
+          <span class="clinic-name-1b">Стоматологическая клиника </span
+          ><span class="dental-tooth-1c">Dental Tooth</span>
+        </div>
+        <span class="services-description"
+          >Мы предлагаем широкий спектр стоматологических услуг в общей клинике.
+          Вам будет предоставлен комплексный план лечения до начала любых
+          стоматологических услуг. Чтобы записаться на прием или узнать больше
+          об услугах, доступных в стоматологической клинике, пожалуйста,
+          позвоните по телефону</span
+        ><span class="services-offered">Мы предлагаем услуги:</span>
+        <div class="frame-1d">
+          <div class="group-1e">
+            <span class="span-tag">Отбеливание зубов</span>
+            <div class="ellipse"></div>
+          </div>
+          <div class="group-1f">
+            <span class="span-tag-20">Апноэ во сне</span>
+            <div class="ellipse-21"></div>
+          </div>
+        </div>
+        <span class="span-tag-22">Лечение десен</span>
+        <div class="ellipse-23"></div>
+        <span class="span-tag-24">Дизайн улыбки</span>
+        <div class="ellipse-25"></div>
+      </div>
+      <div class="rectangle-26">
+        <div class="flex-row-bb">
+          <div class="ellipse-27"></div>
+          <div class="modal">
+            <div class="modal-content">
+                <span class="close-button">Закрыть</span>
+                <label for="name">Введите ваше имя:</label>
+                <input type="text" id="name">
+                <button class="submit-button">Отправить</button>
+            </div>
+        </div>
+          <div class="ellipse-28"></div>
+          <div class="ellipse-29"></div>
+          <div class="underscore">
+            <div class="group-2a">
+              <div class="xmlid">
+                <div class="xmlid-2b"><div class="xmlid-2c"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="avialable-unfill">
+            <div class="group-2d">
+              <div class="group-2e">
+                <div class="group-2f"><div class="vector-30"></div></div>
+              </div>
+              <div class="group-31">
+                <div class="group-32"><div class="vector-33"></div></div>
+              </div>
+              <div class="group-34">
+                <div class="group-35"><div class="vector-36"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="talented-unfill"><div class="group-37"></div></div>
+        </div>
+        <div class="flex-row-a-38">
+          <span class="span-tag-39">Круглосуточная поддержка клиентов</span
+          ><span class="span-tag-3a">Доступная стоматологическая помощь</span
+          ><span class="span-tag-3b">Команда талантливых врачей</span>
+        </div>
+        <div class="flex-row-ed">
+          <span class="span-tag-3c"
+            >Чтобы записаться на прием или узнать больше об услугах, доступных </span
+          ><span class="span-tag-3d"
+            >Чтобы записаться на прием или узнать больше об услугах, доступных </span
+          ><span class="span-tag-3e"
+            >Чтобы записаться на прием или узнать больше об услугах, доступных
+          </span>
+        </div>
+      </div>
+     
+
+
+      
+
+      <span class="span-tag-3f">Наши специалисты</span
+      ><span class="span-tag-40"
+        >Мы построили нашу стоматологию на прочных опорах 22 хирургов MDS. В
+        нашей команде работают опытные специалисты с многолетним опытом
+        работы.</span>
+      <div class="flex-row-f-41">
+        <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="30"
+        slides-per-view="3">
+        <swiper-slide> <img src="stomatolog1.jpg" alt="Image 1"></swiper-slide>
+        <swiper-slide><img src="stomatolog2.jpg" alt="Image 1"></swiper-slide>
+        <swiper-slide><img src="stomatolog3.jpg" alt="Image 1"></swiper-slide>
+        <swiper-slide><img src="stomatolog4.jpg" alt="Image 1"></swiper-slide>
+        <swiper-slide><img src="stomatolog5.jpg" alt="Image 1"></swiper-slide>
+        <swiper-slide><img src="stomatolog6.jpg" alt="Image 1"></swiper-slide>
+        <swiper-slide><img src="stomatolog7.jpg" alt="Image 1"></swiper-slide>
+        <swiper-slide><img src="stomatolog8.jpg" alt="Image 1"></swiper-slide>
+      </swiper-container>
+    
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+      </div>
+      <div class="flex-row-acf">
+        <div class="rectangle-52">
+          <div class="rectangle-53">
+            <span class="span-tag-54">Стоимость лечения от</span
+            ><span class="accessible-prices"
+              >Доступные цены на каждую процедуру</span
+            >
+            <div class="frame-55">
+              <div class="group-56">
+                <div class="group-57">
+                  <span class="teeth-whitening">Отбеливание зубов</span
+                  ><span class="price-120">120$</span>
+                </div>
+                <div class="line"></div>
+              </div>
+              <div class="group-58">
+                <div class="group-59">
+                  <span class="restorations">Реставрации</span
+                  ><span class="price-200">200$</span>
+                </div>
+                <div class="line-5a"></div>
+              </div>
+              <div class="group-5b">
+                <div class="group-5c">
+                  <span class="dental-implants"
+                    >Имплантационная стоматология</span
+                  ><span class="price-80">80$</span>
+                </div>
+                <div class="line-5d"></div>
+              </div>
+              <div class="group-5e">
+                <div class="group-5f">
+                  <span class="gum-treatment">Лечение десен</span
+                  ><span class="price-150">150$</span>
+                </div>
+                <div class="line-60"></div>
+              </div>
+              <div class="group-61">
+                <div class="group-62">
+                  <span class="smile-design">Дизайн улыбки</span
+                  ><span class="price-160">160$</span>
+                </div>
+                <div class="line-63"></div>
+              </div>
+              <div class="group-64">
+                <div class="group-65">
+                  <span class="conscious-sedation">Сознательная седация</span
+                  ><span class="price-200-66">200$</span>
+                </div>
+                <div class="line-67"></div>
+              </div>
+              <div class="group-68">
+                <div class="group-69">
+                  <span class="sleep-apnea">Апноэ во сне</span
+                  ><span class="price-150-6a">150$</span>
+                </div>
+                <div class="line-6b"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pngegg-cf" onclick="createHearts()">
+          
+      </div>
+  
+      <script>
+          function createHearts() {
+              const container = document.querySelector('.pngegg-cf');
+              const heart = document.createElement('div');
+              heart.classList.add('heart');
+              heart.style.left = Math.random() * container.clientWidth + 'px';
+              heart.style.top = Math.random() * container.clientHeight + 'px';
+              container.appendChild(heart);
+  
+              setTimeout(() => {
+                  heart.remove();
+              }, 3000); // Удалить сердечко через 1 секунду
+          }
+      </script>
+      </div>
+      <span class="dental-tooth-news">Новости Dental Tooth</span>
+      <div class="flex-row-c">
+        <div class="rectangle-6c">
+          <div class="rectangle-6d"><div class="rectangle-6e"></div></div>
+          <div class="flex-row-ead">
+            <span class="november-05-2022">05 ноября 2022 </span>
+            <div class="comments">
+              <span class="comments-0">0</span
+              ><span class="comments-text"> комментариев</span>
+            </div>
+          </div>
+          <span class="dentist-services"
+            >Что стоматолог может сделать для ваших зубов</span
+          ><span class="read-more"
+            >Если они были измотаны, то и боль, и таблетку, и саму подушку, и
+            саму боль надо беречь, в следующий раз ...</span
+          >
+          <div class="rectangle-6f">
+            <span class="rectangle-70">Читать далее</span>
+          </div>
+        </div>
+        <div class="rectangle-71">
+          <div class="flex-row-c-72">
+            <div class="november-05-2022-73"></div>
+          </div>
+          <div class="comments-74">
+            <span class="comments-0-75">05 ноября 2022 </span>
+            <div class="comments-text-76">
+              <span class="dentist-selection">0</span
+              ><span class="read-more-77"> комментариев</span>
+            </div>
+          </div>
+          <span class="text-43">Как выбрать стоматологию и не ошибиться?</span
+          ><span class="text-44"
+            >Безусловно, существующая теория позволяет выполнить важные задания
+            по разработке благоприятных перспектив...</span
+          >
+          <div class="box-15"><span class="text-45">Читать далее</span></div>
+        </div>
+        <div class="rectangle-78">
+          <div class="rectangle-79"><div class="rectangle-7a"></div></div>
+          <div class="flex-row-ac">
+            <span class="span-november">05 ноября 2022 </span>
+            <div class="comments-7b">
+              <span class="zero">0</span
+              ><span class="comments-7c"> комментариев</span>
+            </div>
+          </div>
+          <span class="home-treatment"
+            >Сильно болит зуб? Лечение в домашних условиях</span
+          ><span class="innovative-path"
+            >Учитывая ключевые сценарии поведения, выбранный нами инновационный
+            путь напрямую зависит от поставленных...</span
+          >
+          <div class="rectangle-7d">
+            <span class="read-more-7e">Читать далее</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex-row-ab">
+        <div class="rectangle-7f">
+          <div class="rectangle-80"><div class="rectangle-81"></div></div>
+          <span class="organizational-model"
+            >Но новая модель организационной деятельности прекрасно подходит для
+            реализации распределения...</span
+          >
+          <div class="rectangle-82">
+            <span class="read-more-83">Читать далее</span>
+          </div>
+        </div>
+        <div class="rectangle-84">
+          <div class="rectangle-85"><div class="rectangle-86"></div></div>
+          <span class="conclusive-findings"
+            >Неопровержимые выводы, а также акционеры крупнейших компаний
+            являются только методом...</span
+          >
+          <div class="rectangle-87">
+            <span class="read-more-88">Читать далее</span>
+          </div>
+        </div>
+        <div class="rectangle-89">
+          <div class="rectangle-8a"><div class="rectangle-8b"></div></div>
+          <span class="competitive-research"
+            >Тщательные исследования конкурентов функционально разнесены на
+            независимые элементы...</span
+          >
+          <div class="rectangle-8c">
+            <span class="read-more-8d">Читать далее</span>
+          </div>
+        </div>
+        <div class="rectangle-8e">
+          <div class="flex-row-d">
+            <span class="span-november-8f">05 ноября 2022 </span>
+            <div class="comments-90">
+              <span class="zero-91">0</span
+              ><span class="comments-92"> комментариев</span>
+            </div>
+            <span class="span-november-93">05 ноября 2022 </span>
+            <div class="comments-94">
+              <span class="zero-95">0</span
+              ><span class="comments-96"> комментариев</span>
+            </div>
+            <div class="regroup">
+              <div class="comments-97">
+                <span class="zero-98">0</span
+                ><span class="comments-99"> комментариев</span>
+              </div>
+              <span class="span-november-9a">05 ноября 2022 </span>
+            </div>
+          </div>
+          <div class="flex-row">
+            <span class="save-tetracycline-teeth"
+              >Как спасти тетрациклиновые зубы?</span
+            ><span class="clean-teeth-tips"
+              >Как правильно чистить зубы? <br />15 советов</span
+            ><span class="conscious-sedation-info"
+              >Все что Вы хотели узнать про сознательную седацию</span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="rectangle-9b">
+        <span class="flex-row-9c">2022 © Dental Tooth Все права защищены</span>
+        <div class="line-9d">
+          <div class="teeth-services"></div>
+          <span class="dentists"
+            >Отбеливание зубов<br />Лечение десен<br />Апноэ во сне<br />Реставрации<br />Дизайн
+            улыбки<br />Корневой канал<br />Имплантационная стоматология<br />Сознательная
+            седация<br />Ортодонтия</span
+          >
+          <div class="map-container">
+            <iframe
+              width="600"
+              height="450"
+              frameborder="0" style="border:0"
+              src="https://www.google.com/maps?q=Grodno,Belarus&output=embed">
+            </iframe>
+          </div>
+        <span class ="location-unfill-9f"
+            >ул. Протопского 28А город Алматы</span
+          >
+          <div class="group-a0">
+            <div class="group-a1"><div class="group-a2"></div></div>
+          </div>
+          <span class="phone-number-a3">+7 (777) 654 44 54</span>
+          <div class="phone-unfill-a4">
+            <div class="group-a5">
+              <div class="group-a6"><div class="vector-a7"></div></div>
+            </div>
+          </div>
+          <span class="info-email">info@dentaltooth.kz</span>
+          <div class="envelope-unfill-a8">
+            <div class="group-a9"><div class="vector-aa"></div></div>
+          </div>
+          <div class="frame-ab">
+            <div class="twitter-unfill-regular-ac">
+              <div class="group-ad">
+                <div class="group-ae">
+                  <div class="group-af"><div class="vector-b0"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="instagram-unfill-b1"><div class="group-b2"></div></div>
+            <div class="vk-unfill-b3">
+              <div class="group-b4"><div class="vector-b5"></div></div>
+            </div>
+          </div>
+          <div class="line-b6"></div>
+        </div>
+        <div class="flex-row-b7">
+          <div class="mask-group-b8"></div>
+          <span class="dental-tooth-b9">Dental Tooth</span
+          ><span class="our-services">Наши услуги</span
+          ><span class="clinic-ba">Клиника</span>
+          <div class="rectangle-bb"></div>
+        </div>
+      </div>
+      <div class="line-bc"></div>
+      <div class="flex-row-bfb">
+        <div class="quote"></div>
+        <div class="rectangle-bd">
+          <div class="rectangle-be">
+            <div class="rectangle-bf">
+              <span class="client-testimonials">Что говорят наши клиенты</span>
+              <div class="flex-row-bc">
+                <div class="vector-c0"></div>
+                <div class="mask-group-c1"></div>
+                <span class="client-review"
+                  >Отличная стоматология. Заболел зуб. Обратился в эту
+                  стоматологию. Качество обслуживания на высшем уровне. Сделали
+                  отбеливание зубов. Все отлично. Однозначно рекомендую.</span
+                ><span class="alina-belyaeva">Алина Беляева</span>
+                <div class="ellipse-c2"></div>
+                <!-- <a href="https://vk.com/wall-33344798_2403439" target="_blank"> -->
+                <div class="ellipse-c3"></div>
+                </a>  
+                <div class="twitter-unfill-regular-c4">
+                  <div class="group-c5">
+                    <div class="group-c6">
+                      <div class="group-c7"><div class="vector-c8"></div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="vk-unfill-c9">
+                  <div class="group-ca"><div class="vector-cb"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="group-cc"></div>
+            <div class="group-cd"></div>
+          </div>
+        </div>
+      </div>
+     
+     
+      <div class="flex-row-ce">
+        <div class="pngegg-cf"><div class="circle-d0"></div></div>
+        <div class="rectangle-d1">
+          <div class="rectangle-d2">
+            <span class="book-appointment">Записаться на прием</span>
+              <form><input class="zapis" type="text" id="name" name="name" placeholder="     Ваше имя">
+            </form>
+              <form><input class="zapis" type="text" id="name" name="name" placeholder="     Ваш телефон">
+              </form>
+            <div class="rectangle-d5" id="rectangle">
+                <span class="book-appointment-d6">Записаться на прием</span>
+            </div>
+            <span class="personal-data-consent"
+              >Нажимая кнопку, я даю свое согласие на обработку моих
+              персональных данных<br
+            /></span>
+            
+          </div>
+        </div>
+        
+      </div>
+
+     
+  
+    </div>
+    <style>
+      .rectangle-26{
+        margin-bottom: 20px;
+      }
+      .cont-m-2{
+        width: 450px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #007bff;
+        border-radius: 12px;
+        color: #fff;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 18px;
+      }
+
+      .cont-m-2 button{
+        padding: 15px 5px;
+        border-radius: 5px;
+        border: none;
+        color: #dfeefc;
+        background-color: rgb(17, 110, 197);
+        cursor: pointer;
+        transition: ease-in-out 0.4s;
+        &:hover{
+          transform: scale(1.1);
+        }
+      }
+
+      .extra-buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 90%;
+      }
+
+      #myForm-cc{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        padding: 10px;
+      }
+
+      #crd-main{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 30px 0px 75px 0px;
+        row-gap: 20px;
+      }
+      .crd{
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        color: black;
+        background-color:#dfeefc;
+        border-radius: 13px 3.6px;
+        padding: 20px;
+        font-family: Source Sans Pro, var(--default-font-family);
+        font-weight: 700;
+        /* font-size: 36px; */
+        font-size: clamp(1.25rem, 1.026rem + 0.957vw, 1.875rem);
+      
+      }
+      .crd img{
+        width: 350px;
+        height: 250px;
+        border-radius: 10px;
+      }
+      .main22c{
+        margin-top: 100px;
+
+      }
+      .error {
+        border: 2px solid red;
+    }
+    .error-message {
+        color: red;
+        font-size: 12px;
+    }
+    </style>
+    
+    
+  <div class="main22c">
+    <div class="cont-m-2">
+      <form id="myForm-cc" onsubmit="validateForm(event)">
+        <label for="firstName">Имя:</label>
+        <input type="text" id="firstName" name="firstName" minlength="2" maxlength="20">
+        <span id="firstNameError" class="error-message"></span><br><br>
+
+        <label for="lastName">Фамилия:</label>
+        <input type="text" id="lastName" name="lastName" minlength="2" maxlength="20">
+        <span id="lastNameError" class="error-message"></span><br><br>
+
+        <label for="phone" >Номер телефона:</label>
+        <input type="text" id="phone" name="phone" maxlength="13">
+        <span id="phoneError" class="error-message"></span><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <span id="emailError" class="error-message"></span><br><br>
+
+        <label for="gender">Пол:</label>
+        <select id="gender" name="gender">
+            <option value="">Выберите пол</option>
+            <option value="male">Мужской</option>
+            <option value="female">Женский</option>
+        </select>
+        <span id="genderError" class="error-message"></span><br><br>
+
+        <button type="submit" onclick="validateForm()">Отправить</button>
+        
+    </form>
+    <div class="extra-buttons">
+      <button onclick="clearCookies()">Удалить Cookies</button>
+      <button onclick="clearLocalStorage()">Удалить LocalStorage</button>
+  </div>
+   <script>
+    function clearCookies() {
+      const cookies = document.cookie.split("; ");
+      for (let c = 0; c < cookies.length; c++) {
+          const d = window.location.hostname.split(".");
+          while (d.length > 0) {
+              const cookieBase = encodeURIComponent(cookies[c].split(";")[0].split("=")[0]) + 
+                  '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + d.join('.');
+              const p = window.location.pathname.split('/');
+              document.cookie = cookieBase;
+              while (p.length > 0) {
+                  document.cookie = cookieBase + '/' + p.join('/');
+                  p.pop();
+              };
+              d.shift();
+          }
+      }
+      alert('Cookies очищены');
+  }
+
+  function clearLocalStorage() {
+      localStorage.clear();
+      alert('Local Storage очищен');
+  }
+   </script>
+    </div>
+    <div id="crd-main">
+      <!-- <div class="crd-cn">
+      <div class="crd">
+          <span class="crd-title"></span>
+          <img src="" alt="">
+          <p class="crd-price"></p>
+      </div>
+  </div> -->
+  </div>
+  </div>
+    <button onclick="scrollToTop()" id="scrollToTopBtn" title="Наверх">&#8679;</button>
+
+    <script>
+        // Показываем кнопку при скролле вниз
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("scrollToTopBtn").style.display = "block";
+            } else {
+                document.getElementById("scrollToTopBtn").style.display = "none";
+            }
+        }
+
+        // Прокрутка к началу страницы при нажатии на кнопку
+        function scrollToTop() {
+            document.body.scrollTop = 0; // Для Safari
+            document.documentElement.scrollTop = 0; // Для других браузеров
+        }
+
+      
+          document.addEventListener('DOMContentLoaded', function() {
+              const banner = document.getElementById('banner');
+              setInterval(function() {
+                  banner.style.display = 'block';
+                  setTimeout(function() {
+                      banner.style.display = 'none';
+                  }, 5000); // Баннер будет отображаться 5 секунд
+              }, 10000); // Баннер будет появляться каждые 15 секунд
+          });
+   
+    </script>
+    <div id="banner">Купи зубы</div>
+  </body>
+</html>
