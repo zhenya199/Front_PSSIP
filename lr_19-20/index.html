@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товаров</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Каталог товаров</h1>
+    <div id="product-list" class="product-list"></div>
+
+    <h2>Корзина</h2>
+    <div id="cart" class="cart"></div>
+    <button id="view-cart" onclick="viewCart()">Посмотреть корзину</button>
+
+    <h2>Форма обратной связи</h2>
+    <button onclick="openForm()">Открыть форму</button>
+    <form id="myForm" style="display:none;">
+        <div class="mb-3">
+            <label for="Email1" class="form-label">Email адрес</label>
+            <input type="email" required class="form-control" id="Email1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Имя</label>
+            <input type="text" id="name" class="form-control" required pattern="[A-Za-zА-Яа-яЁё\s]+" title="Только буквы и пробелы разрешены.">
+        </div>
+        <div class="mb-3">
+            <label for="hobbies">Хобби</label><br>
+            <input type="checkbox" id="hobby1" value="Чтение"> Чтение<br>
+            <input type="checkbox" id="hobby2" value="Футбол"> Футбол<br>
+            <input type="checkbox" id="hobby3" value="Пение"> Пение<br>
+            <input type="checkbox" id="hobby4" value="Скачки"> Скачки<br>
+        </div>
+        <div class="mb-3">
+            <label for="gender" class="form-label">Ваш пол</label><br>
+            <input type="radio" name="gender" value="Мужчина" required> Мужчина
+            <input type="radio" name="gender" value="Женщина" required> Женщина
+        </div>
+        <div class="mb-3">
+            <label for="country">Страна:</label>
+            <select id="country" class="form-control" required>
+                <option value="">Выберите страну</option>
+                <option value="Russia">Россия</option>
+                <option value="Belarus">Беларусь</option>
+                <option value="USA">США</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+        <button type="button" class="btn btn-secondary" onclick="deleteAllCookies()">Закрыть</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
